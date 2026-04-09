@@ -1,6 +1,6 @@
 
 # Getting Started with Create React App
-# 🏭 Die Casting ERP System
+# Die Casting ERP System
 
 A modern ERP (Enterprise Resource Planning) web application built using React, designed for manufacturing industries like die casting.
 
