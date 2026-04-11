@@ -1,5 +1,47 @@
 
 # Getting Started with Create React App
+# Die Casting ERP System
+
+A modern ERP (Enterprise Resource Planning) web application built using React, designed for manufacturing industries like die casting.
+
+---
+
+## 🚀 Features
+
+- 🔐 Role-Based Login System
+- 👨‍💼 Admin Dashboard
+- 🏭 Production Dashboard
+- 🧪 Quality Dashboard
+- 📦 Procurement Dashboard
+- 💰 Sales Dashboard
+- 🎨 Clean UI with Bootstrap
+- ⚡ Responsive Design
+
+---
+
+## 🛠️ Tech Stack
+
+- React.js
+- React Router
+- Bootstrap 5
+- JavaScript (ES6)
+
+---
+
+## 🔑 Demo Credentials
+
+| Role        | Email                             | Password |
+|------------|----------------------------------|----------|
+| Admin       | vikram.singh@precisioncast.com   | 123456   |
+| Production  | rajesh.kumar@precisioncast.com   | 123456   |
+| Quality     | priya.sharma@precisioncast.com   | 123456   |
+| Procurement | amit.patel@precisioncast.com     | 123456   |
+| Sales       | sneha.mehta@precisioncast.com    | 123456   |
+
+---
+
+## 📂 Project Structure
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
