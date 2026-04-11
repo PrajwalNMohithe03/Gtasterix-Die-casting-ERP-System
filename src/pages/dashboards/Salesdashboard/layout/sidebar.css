@@ -1,0 +1,21 @@
+.menu-item {
+  color: white;
+  transition: all 0.25s ease;
+}
+
+.menu-item:hover {
+  background-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+.active-item {
+  background-color: #ffffff !important;
+  color: #1f3c88 !important;
+  font-weight: 600;
+}
+
+.active-item i {
+  color: #1f3c88 !important;
+}
+.menu-item.text-white:hover {
+  background-color: rgb(233, 16, 16);
+}

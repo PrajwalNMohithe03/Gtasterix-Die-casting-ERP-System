@@ -1,0 +1,134 @@
+.ncr-page {
+  padding: 20px;
+  background: #f5f7fb;
+  overflow-x: hidden; /* prevent full page scroll */
+}
+
+/* HEADER */
+.ncr-page h2 {
+  font-weight: 700;
+}
+
+.ncr-page p {
+  margin: 0;
+  color: #6b7280;
+}
+
+/* SUMMARY CARDS */
+.summary-card {
+  padding: 18px;
+  border-radius: 12px;
+  border: none;
+  background: #ffffff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  transition: 0.2s;
+}
+
+.summary-card:hover {
+  transform: translateY(-2px);
+}
+
+.summary-card p {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.summary-card h4 {
+  font-weight: 700;
+  margin-top: 5px;
+}
+
+/* SEARCH */
+.search-box {
+  flex: 1;
+  min-width: 280px;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+/* CARD */
+.card {
+  border-radius: 12px !important;
+  border: none !important;
+}
+
+/* ✅ TABLE CONTAINER (MAIN FIX) */
+.table-container {
+  width: 100%;
+  background: #fff;
+  border-radius: 12px;
+  padding: 10px;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+/* ✅ FORCE TABLE TO SCROLL INSIDE */
+.table-container table {
+  width: max-content;
+  min-width: 100%;
+}
+
+/* SCROLLBAR */
+.table-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.table-container::-webkit-scrollbar-track {
+  background: #e5e7eb;
+  border-radius: 10px;
+}
+
+.table-container::-webkit-scrollbar-thumb {
+  background: #9ca3af;
+  border-radius: 10px;
+}
+
+/* TABLE STYLE */
+.table thead th {
+  font-size: 13px;
+  color: #6b7280;
+  font-weight: 600;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.table tbody tr:hover {
+  background: #f9fafb;
+}
+
+.table td {
+  font-size: 14px;
+  vertical-align: middle;
+  border-top: 1px solid #f1f5f9;
+}
+
+/* BADGES */
+.badge {
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+}
+
+/* BUTTONS */
+.btn-primary {
+  background: #2563eb;
+  border: none;
+}
+
+.btn-primary:hover {
+  background: #1e40af;
+}
+
+.btn-purple {
+  background: linear-gradient(45deg, #7c3aed, #a855f7);
+  color: #fff;
+  border: none;
+}
+
+.btn-purple:hover {
+  opacity: 0.9;
+}
+
+.btn-danger {
+  border-radius: 10px;
+}

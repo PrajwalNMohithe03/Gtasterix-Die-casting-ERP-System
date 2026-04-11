@@ -40,29 +40,34 @@ export default function Login() {
       role: "sales",
       email: "sneha.mehta@precisioncast.com",
       password: "123456",
-      route: "/sales-dashboard",
+      route: "/sales",
     },
   ];
 
-  const handleLogin = () => {
-    setSubmitted(true);
+ const handleLogin = () => {
+  setSubmitted(true);
 
-    if (!email || !password) {
-      setError("⚠️ Please fill all fields");
-      return;
-    }
+  if (!email || !password) {
+    setError("⚠️ Please fill all fields");
+    return;
+  }
 
-    const user = users.find(
-      (u) => u.email === email && u.password === password
-    );
+  const user = users.find(
+    (u) => u.email === email && u.password === password
+  );
 
-    if (user) {
-      localStorage.setItem("userRole", user.role);
-      navigate(user.route);
-    } else {
-      setError("invalid");
-    }
-  };
+  if (user) {
+    // 🔥 ADD THIS LINE (MOST IMPORTANT)
+    localStorage.setItem("auth", "true");
+
+    // already exists
+    localStorage.setItem("userRole", user.role);
+
+    navigate(user.route);
+  } else {
+    setError("invalid");
+  }
+};
 
   return (
     <div
@@ -188,7 +193,11 @@ export default function Login() {
           key={i}
           className="btn btn-light w-100 mb-1 text-start"
           style={{ padding: "6px", fontSize: "12px" }}
-          onClick={() => navigate(u.route)}
+          onClick={() => {
+  localStorage.setItem("auth", "true");
+  localStorage.setItem("userRole", u.role);
+  navigate(u.route);
+}}
         >
           <b>{u.role.toUpperCase()}</b><br />
           {u.email}

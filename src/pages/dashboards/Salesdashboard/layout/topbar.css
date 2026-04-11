@@ -1,0 +1,27 @@
+.item-highlight {
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.item-highlight:hover {
+  background: #eef2ff;
+}
+
+.dark-mode {
+  background: #111827;
+  color: #fff;
+}
+
+.dark-mode .bg-white {
+  background: #1f2937 !important;
+}
+
+.dark-mode input {
+  background: #374151 !important;
+  color: #fff;
+}
+.item-highlight:hover {
+  background-color: #f1f5f9;
+  border-radius: 6px;
+}
