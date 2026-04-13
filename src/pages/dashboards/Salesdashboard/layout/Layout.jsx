@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { Outlet } from "react-router-dom";
 import Sidebar from "./SidebarTemp";
 import Topbar from "./Topbar";
+import AppRoutes from "../../../../routes/Approutes"; // adjust path
 
 export default function Layout() {
   const [collapsed, setCollapsed] = useState(false);
@@ -13,19 +13,20 @@ export default function Layout() {
   return (
     <div className="d-flex layout-wrapper">
 
-      {/* SIDEBAR */}
       <Sidebar collapsed={collapsed} />
-
-      {/* RIGHT SIDE */}
-      <div className="main-content">
-
+<div
+  className="main-content"
+  style={{
+    width: collapsed ? "calc(100% - 80px)" : "calc(100% - 240px)"
+  }}
+>
         <Topbar toggleSidebar={toggleSidebar} />
 
         <div className="page-content">
-          <Outlet />
+          <AppRoutes />   {/* ✅ IMPORTANT */}
         </div>
-
       </div>
+
     </div>
   );
 }

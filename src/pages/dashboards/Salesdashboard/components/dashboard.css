@@ -1,14 +1,56 @@
+/* KPI CARD */
 .kpi-card {
-  transition: all 0.2s ease;
+  transition: all 0.25s ease;
+  border-radius: 12px;
+  cursor: pointer;
 }
 
 .kpi-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
 }
 
+/* ACTIVITY DOT */
 .dot {
   width: 10px;
   height: 10px;
   margin-top: 6px;
+  flex-shrink: 0;
+}
+
+/* CARD GLOBAL IMPROVEMENT */
+.card {
+  border-radius: 14px;
+}
+
+/* SMOOTH SCROLL (optional but nice) */
+.page-content {
+  scroll-behavior: smooth;
+}
+.dashboard-wrapper {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+body {
+  overflow-x: hidden;
+}
+
+.w-100 {
+  width: 100% !important;
+}
+.sales-dashboard-wrapper {
+  width: 100%;
+  max-width: 100%;
+  display: block;
+}
+.row {
+  width: 100%;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+[class*="col-"] {
+  padding-left: 10px !important;
+  padding-right: 10px !important;
 }

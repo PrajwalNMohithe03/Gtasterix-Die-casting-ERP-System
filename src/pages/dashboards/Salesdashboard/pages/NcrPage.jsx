@@ -1,142 +1,227 @@
-import React from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
+import React, { useState } from "react";
 import "./ncr.css";
 
 export default function NCRPage() {
+const [severity, setSeverity] = useState("all");  //
+  const data = [
+    {
+      id: "NCR-002",
+      type: "Supplier",
+      desc: "Dimensional deviation in CP-001 Insert M8",
+      severity: "minor",
+      status: "closed",
+      user: "Priya Sharma"
+    },
+    {
+      id: "NCR-003",
+      type: "Internal",
+      desc: "Cold shut defect - FG-001 Gearbox Housing",
+      severity: "critical",
+      status: "action",
+      user: "Kavita Joshi"
+    },
+    {
+      id: "NCR-004",
+      type: "Customer",
+      desc: "Surface finish not as per Maruti spec",
+      severity: "major",
+      status: "progress",
+      user: "Priya Sharma"
+    }
+  ];
+
+  const [selected, setSelected] = useState(data[1]);
+
   return (
-    <div className="ncr-page">
-  <div className="container-fluid">
+    <div className="container-fluid ncr-page">
 
       {/* HEADER */}
-      <div className="d-flex justify-content-between align-items-center mb-4">
+      <div className="d-flex justify-content-between align-items-center mb-3">
         <div>
-          <h2 className="fw-bold">Non-Conformance Reports (NCR)</h2>
-          <p className="text-muted">
+          <h3 className="fw-semibold">Non-Conformance Reports (NCR)</h3>
+          <p className="text-muted small mb-0">
             Track and manage quality non-conformances
           </p>
         </div>
-        <button className="btn btn-danger px-4 py-2 fw-semibold">
-          + Create NCR
-        </button>
+        <button className="btn create-btn">+ Create NCR</button>
       </div>
 
-      {/* SUMMARY CARDS */}
-      <div className="row mb-4">
-        <div className="col-md-3">
-          <div className="card summary-card">
-            <p>Open NCRs</p>
-            <h4>3</h4>
-          </div>
-        </div>
+      {/* KPI */}
+     <div className="row g-3 mb-3">
 
-        <div className="col-md-3">
-          <div className="card summary-card">
-            <p>Critical</p>
-            <h4 className="text-danger">1</h4>
-          </div>
-        </div>
-
-        <div className="col-md-3">
-          <div className="card summary-card">
-            <p>Major</p>
-            <h4 className="text-warning">2</h4>
-          </div>
-        </div>
-
-        <div className="col-md-3">
-          <div className="card summary-card">
-            <p>Closed</p>
-            <h4 className="text-success">1</h4>
-          </div>
-        </div>
+  {/* OPEN NCR */}
+  <div className="col-md-3">
+    <div className="kpi-card d-flex align-items-center">
+      <div className="icon-box red">
+        <i className="bi bi-exclamation-triangle"></i>
       </div>
-
-      {/* SEARCH + FILTER */}
-      <div className="card p-3 mb-3">
-        <div className="d-flex gap-3 flex-wrap">
-          <input
-            type="text"
-            className="form-control search-box"
-            placeholder="Search by NCR ID or description..."
-          />
-
-          <select className="form-select w-auto">
-            <option>All Severity</option>
-            <option>Critical</option>
-            <option>Major</option>
-            <option>Minor</option>
-          </select>
-
-          <button className="btn btn-outline-secondary">
-            More Filters
-          </button>
-        </div>
+      <div>
+        <p className="kpi-title">Open NCRs</p>
+        <h4 className="kpi-value">3</h4>
       </div>
+    </div>
+  </div>
 
-      {/* TABLE BOX WITH SCROLLBAR */}
-      <div className="table-container mt-2">
+  {/* CRITICAL */}
+  <div className="col-md-3">
+    <div className="kpi-card d-flex align-items-center">
+      <div className="icon-box orange">
+        <i className="bi bi-clock"></i>
+      </div>
+      <div>
+        <p className="kpi-title">Critical</p>
+        <h4 className="kpi-value text-danger">1</h4>
+      </div>
+    </div>
+  </div>
 
-        <table className="table align-middle mb-0">
-          <thead>
-            <tr>
-              <th>NCR ID</th>
-              <th>Type</th>
-              <th>Description</th>
-              <th>Severity</th>
-              <th>Status</th>
-              <th>Assigned To</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
+  {/* MAJOR */}
+  <div className="col-md-3">
+    <div className="kpi-card d-flex align-items-center">
+      <div className="icon-box yellow">
+        <i className="bi bi-exclamation-circle"></i>
+      </div>
+      <div>
+        <p className="kpi-title">Major</p>
+        <h4 className="kpi-value text-warning">2</h4>
+      </div>
+    </div>
+  </div>
 
-          <tbody>
-            <tr>
-              <td className="text-primary fw-semibold">NCR-001</td>
-              <td><span className="badge bg-light text-dark">Internal</span></td>
-              <td>Porosity defect in FG-005 Crankcase Cover</td>
-              <td><span className="badge bg-warning text-dark">Major</span></td>
-              <td><span className="badge bg-primary">Under Review</span></td>
-              <td>Rajesh Kumar</td>
-              <td><button className="btn btn-primary btn-sm">View</button></td>
-            </tr>
+  {/* CLOSED */}
+  <div className="col-md-3">
+    <div className="kpi-card d-flex align-items-center">
+      <div className="icon-box green">
+        <i className="bi bi-check-circle"></i>
+      </div>
+      <div>
+        <p className="kpi-title">Closed</p>
+        <h4 className="kpi-value text-success">1</h4>
+      </div>
+    </div>
+  </div>
 
-            <tr>
-              <td className="text-primary fw-semibold">NCR-002</td>
-              <td><span className="badge bg-light text-dark">Supplier</span></td>
-              <td>Dimensional deviation in CP-001 Insert M8</td>
-              <td><span className="badge bg-warning text-dark">Minor</span></td>
-              <td><span className="badge bg-success">Closed</span></td>
-              <td>Priya Sharma</td>
-              <td><button className="btn btn-primary btn-sm">View</button></td>
-            </tr>
-
-            <tr>
-              <td className="text-primary fw-semibold">NCR-003</td>
-              <td><span className="badge bg-light text-dark">Internal</span></td>
-              <td>Cold shut defect - FG-001 Gearbox Housing</td>
-              <td><span className="badge bg-danger">Critical</span></td>
-              <td><span className="badge bg-warning text-dark">Corrective Action</span></td>
-              <td>Kavita Joshi</td>
-              <td><button className="btn btn-primary btn-sm">View</button></td>
-            </tr>
-
-            <tr>
-              <td className="text-primary fw-semibold">NCR-004</td>
-              <td><span className="badge bg-light text-dark">Customer</span></td>
-              <td>Surface finish not as per Maruti spec</td>
-              <td><span className="badge bg-warning text-dark">Major</span></td>
-              <td><span className="badge bg-secondary">8D in Progress</span></td>
-              <td>Priya Sharma</td>
-              <td className="d-flex gap-2">
-                <button className="btn btn-primary btn-sm">View</button>
-                <button className="btn btn-purple btn-sm">8D Report</button>
-              </td>
-            </tr>
-
-          </tbody>
-        </table>
 </div>
+<div className="filter-container mb-3">
+
+  <div className="search-box">
+    <i className="bi bi-search"></i>
+    <input placeholder="Search by NCR ID or description..." />
+  </div>
+
+
+<select
+  className="form-select filter-select"
+  value={severity}
+  onChange={(e) => setSeverity(e.target.value)}
+>
+  <option value="all">All Severity</option>
+  <option value="critical">Critical</option>
+  <option value="major">Major</option>
+  <option value="minor">Minor</option>
+</select>
+
+  <button className="btn filter-btn">
+    <i className="bi bi-funnel me-1"></i> More Filters
+  </button>
+
+</div>
+      {/* TABLE */}
+      <div className="table-box">
+        <div className="table-scroll">
+
+          <table className="table ncr-table align-middle">
+            <thead>
+              <tr>
+                <th>NCR ID</th>
+                <th>TYPE</th>
+                <th>DESCRIPTION</th>
+                <th>SEVERITY</th>
+                <th>STATUS</th>
+                <th>ASSIGNED TO</th>
+                <th style={{ minWidth: "200px" }}>ACTIONS</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              {data.map((row) => (
+                <tr
+                  key={row.id}
+                  onClick={() => setSelected(row)}
+                  className={selected.id === row.id ? "row-active" : ""}
+                >
+                  <td className="fw-semibold text-primary">{row.id}</td>
+                  <td><span className="pill">{row.type}</span></td>
+                  <td>{row.desc}</td>
+
+                  <td><span className={`badge-custom ${row.severity}`}>{row.severity}</span></td>
+                  <td><span className={`badge-custom ${row.status}`}>{row.status}</span></td>
+
+                  <td>{row.user}</td>
+
+                  <td>
+                    <button className="btn btn-sm btn-primary me-2">View</button>
+                    {row.status === "progress" && (
+                      <button className="btn btn-sm btn-purple">8D Report</button>
+                    )}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+
+        </div>
       </div>
+
+      {/* DETAIL PANEL */}
+      <div className="detail-panel mt-3">
+
+        <div className="d-flex justify-content-between">
+          <h5 className="fw-semibold">{selected.id} - {selected.desc}</h5>
+          <span className="badge-custom critical">Critical</span>
+        </div>
+
+        <p className="text-muted small">
+          Created: 09-Mar-2026 | Type: {selected.type}
+        </p>
+
+        <p>{selected.desc}</p>
+
+        <div className="row g-3 mt-2">
+          <div className="col-md-4">
+            <div className="info-box yellow">
+              <h6>Containment</h6>
+              <p>12 pcs segregated & tagged</p>
+            </div>
+          </div>
+
+          <div className="col-md-4">
+            <div className="info-box blue">
+              <h6>Root Cause</h6>
+              <p>Temperature too low</p>
+            </div>
+          </div>
+
+          <div className="col-md-4">
+            <div className="info-box purple">
+              <h6>Corrective Action</h6>
+              <p>Pre-heat cycle</p>
+            </div>
+          </div>
+        </div>
+
+        {/* TIMELINE */}
+        <div className="timeline mt-4">
+          {["Raised","Investigation","Containment","Root Cause","Corrective Action","Verification"].map((t,i)=>(
+            <div key={i} className={`step ${i<4?"done":i===4?"active":""}`}>
+              <div className="circle">{i<4?"✓":i+1}</div>
+              <span>{t}</span>
+            </div>
+          ))}
+        </div>
+
+      </div>
+
     </div>
   );
 }

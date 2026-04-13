@@ -1,0 +1,57 @@
+.oee-dashboard {
+  background: #f5f7fb;
+}
+
+/* TEXT */
+.sub-text {
+  color: #667085;
+  font-size: 14px;
+}
+
+/* BUTTONS */
+.light-btn {
+  border: 1px solid #e5e7eb;
+  background: white;
+  border-radius: 8px;
+}
+
+.primary-btn {
+  background: #2d4fd7;
+  color: white;
+  border-radius: 8px;
+}
+
+/* CARD */
+.card {
+  border-radius: 12px;
+  border: 1px solid #eaecf0;
+  box-shadow: 0 1px 2px rgba(16, 24, 40, 0.04);
+}
+
+/* OEE CIRCLE */
+.oee-card {
+  padding: 16px;
+}
+
+.circle {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin: 10px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+/* COLORS */
+.circle.green {
+  border: 10px solid #16a34a;
+  color: #16a34a;
+}
+
+.circle.orange {
+  border: 10px solid #f59e0b;
+  color: #f59e0b;
+}

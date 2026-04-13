@@ -1,61 +1,43 @@
+/* FULL SCREEN FIX */
+html, body, #root {
+  height: 100%;
+  margin: 0;
+}
+
+/* REMOVE CENTER ALIGNMENT */
 .App {
-  text-align: center;
+  text-align: left;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* LAYOUT FIX */
+.layout-wrapper {
+  display: flex;
+  height: 100vh;
+  width: 100%;   /* 🔥 THIS LINE WAS MISSING */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+
+.layout-wrapper {
+  display: flex;
+  height: 100vh;
+  width: 100%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.main-content {
+  flex: 1;                /* 🔥 take remaining space */
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  min-width: 0;           /* 🔥 prevents overflow bug */
 }
 
-.App-link {
-  color: #61dafb;
+.page-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px;
+  background: #f5f7fb;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-.item-highlight {
-  padding: 8px 12px;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-.item-highlight:hover {
-  background: #eef2ff;
-}
-
-.dark-mode {
-  background: #111827;
-  color: #fff;
-}
-
-.dark-mode .bg-white {
-  background: #1f2937 !important;
-}
-
-.dark-mode input {
-  background: #374151 !important;
-  color: #fff;
+html, body, #root {
+  height: 100%;
+  width: 100%;   /* 🔥 ADD THIS */
+  margin: 0;
 }

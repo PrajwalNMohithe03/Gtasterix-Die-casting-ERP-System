@@ -5,7 +5,6 @@ import WorkOrdersPage from "../pages/dashboards/Salesdashboard/pages/WorkOrdersP
 import MachineMonitoring from "../pages/dashboards/Salesdashboard/pages/MachineMonitoring";
 import NCRPage from "../pages/dashboards/Salesdashboard/pages/NcrPage";
 import ApprovalsPage from "../pages/dashboards/Salesdashboard/pages/ApprovalsPage";
-
 import OrdersPage from "../pages/dashboards/Salesdashboard/salesorder/SalesOrder";
 import AnalyticsPage from "../pages/dashboards/Salesdashboard/analytics/Analytics";
 

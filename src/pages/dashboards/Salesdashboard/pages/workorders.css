@@ -225,3 +225,15 @@
 .eye {
   color: #2563eb;
 }
+.ncr-table {
+  min-width: 1400px;   /* 🔥 increase this */
+}
+.table-box {
+  width: 100%;
+  overflow: hidden;
+}
+
+.table-scroll {
+  width: 100%;
+  overflow-x: auto;
+}
